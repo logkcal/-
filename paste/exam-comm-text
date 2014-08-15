@@ -1,0 +1,79 @@
+#!/usr/bin/env jruby
+require_relative 'p-topics'
+%w{optparse open-uri csv json open3}.each { |e| require e }
+
+$options = {}
+OptionParser.new do |p|
+  p.on('-s', '--skip-lines INTEGER', Integer, 'Skips processing as many lines as specified (default: 1).') { |v| $options[:skip_count] = v }
+  p.on('-n', '--max-lines INTEGER',  Integer, 'Processes as many lines as specified.') { |v| $options[:max_lines] = v }
+  p.on('-i', '--id-field INTEGER',   Integer, 'Specifies required comm. text id field.') { |v| $options[:id_field] = v }
+  p.on('-q', '--q-field INTEGER',    Integer, 'Specifies required FAQ field.') { |v| $options[:q_field] = v }
+  p.on('-f', '--fields i,j,k',       Array,   'Specifies required field indices to put into computation.') { |v| $options[:fields] = v }
+  p.on('-m', '--model-id STRING',    String,  'Specifies optional model id.') { |v| $options[:model_id] = v }
+  p.on('-x', '--excludes x,y,z',     Array,   'Specifies labels to exclude.') { |v| $options[:excludes] = v }
+  p.on('-t', '--threshold FLOAT',    Float,   'Sepcifies a threshold for classification.') { |v| $options[:threshold] = v }
+  p.on('-d', '--dataset-id STRING',  String,  'Specifies optional dataset id.') { |v| $options[:dataset_id] = v }
+end.parse!
+
+max_lines = $options[:max_lines]
+q_fields = ($options[:q_fields] || ['8']).map { |e| e.to_i }
+fields = ($options[:fields] || ['4', '5']).map { |e| e.to_i }
+model_id = $options[:model_id] || 'l-lda-7'
+excludes = $options[:excludes] || []
+threshold = $options[:threshold] || 0.47
+dataset_id = $options[:dataset_id] || 'rrc_pro_3492_876'
+
+docs = ["#{ENV['MAHOUT_WORK']}/#{dataset_id}"]
+system "s3cmd get 's3://#{ENV['S3_BUCKET']}-private/resources/#{dataset_id}.csv' '#{docs[0]}'" unless File.exists?(docs[0])
+
+q2cc = docs.reduce({}) do |h, e| # comm. texts keyed by FAQ.
+  skip_count = $options[:skip_count] || 1
+  CSV.open(e, 'r:windows-1250').each do |line|
+    next if (skip_count -= 1) >= 0
+    break unless max_lines.nil? || (max_lines -= 1) >= 0
+    q = q_fields.map { |f| line[f] }.compact.map { |e| e.gsub(/\A\s+|\s+\Z/, '') }.join('; ')
+    (h[q] ||= []) << c = fields.map { |f| line[f] }.join('; ') unless q.empty? or excludes.include?(q)
+    # p h; exit -2
+  end
+  h
+end
+
+modeling = TopicModeling.new(model_id, true)
+z2qf = q2cc.reduce({}) do |h, (q, cc)| # topic frequencies keyed by FAQ.
+  cc.map { |c| putc '.'; modeling.p_topics(c) }.
+    map { |p| (p[0].nan? || p.max < threshold) ? -1 : p.each_with_index.max[1] }.
+    reduce({}) { |zf, z| zf[z] = (zf[z] || 0) + 1; zf }.
+    reduce(h) { |h, (z, f)| (h[z] ||= {})[q] = f; h }
+end
+puts
+
+a, b = "http://s3.amazonaws.com/#{ENV['S3_BUCKET']}/#{model_id}/labels.json", "/tmp/#{model_id}/labels.json"
+%x(curl -o #{b} -fksL #{a} --create-dirs) unless File.exist?(b)
+labels = JSON[open(b).read] if File.exist?(b)
+
+z2qf_max = if labels
+  puts '### Labels: '
+  jj labels
+  z2qf.reduce({}) { |h, (z, qf)| h[z] = qf[-1 == z ? 'Others' : labels[z]].to_i; h }
+else
+  z2qf.reduce({}) { |h, (z, qf)| h[z] = qf.values.max; h }
+end
+z2qf_sum = z2qf.reduce({}) { |h, (z, qf)| h[z] = qf.values.reduce(:+); h }
+
+puts '### Frequences keyed by topic & FAQ: '
+jj z2qf
+
+puts '### Frequency max keyed by topic: '
+jj z2qf_max
+
+puts '### Frequency sum keyed by topic: '
+jj z2qf_sum
+
+puts "### Frequency sum keyed by FAQ: (#{b = q2cc.values.map { |cc| cc.size }.reduce(:+)} communications/#{q2cc.keys.size} questions)"
+jj q2cc.reduce({}) { |h, (l, cc)| h[l] = cc.size; h }
+
+puts '### Overall topic modeling accuracy: '
+a = z2qf_max.values.map { |e| e.to_i }.reduce(:+)
+puts '%s%% (%s / %s)' % [(100.0 * a / b).round(1), a, b]
+
+exit 0

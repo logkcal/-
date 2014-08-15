@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.p4config
+*.prefs
+.DS_Store
+.checkstyle
+.gitignore
+.pmd
+.ruleset
+.ipynb_checkpoints/
+.settings/
+apollo-overrides/
+bin/
+build/
+target/

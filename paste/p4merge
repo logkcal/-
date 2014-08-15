@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+args = ARGV.map(&File.method(:absolute_path)).join(' ')
+system "/Applications/p4merge.app/Contents/Resources/launchp4merge #{args}"

@@ -1,0 +1,76 @@
+#!/usr/bin/env jruby
+%w{optparse fileutils open-uri csv json}.each { |e| require e }
+
+$options = {}
+OptionParser.new do |p|
+  p.on('-s', '--skip-entries INTEGER', Integer, 'Skips processing as many entries as specified (default: 1).') { |v| $options[:skip_count] = v }
+  p.on('-n', '--max-entries INTEGER', Integer, 'Processes as many entries as specified.') { |v| $options[:max_entries] = v }
+  p.on('-d', '--out-dir PATH', String, 'Specifies an optional output directory path (default: /tmp/).') { |v| $options[:out_dir] = v }
+  p.on('-i', '--id-field INTEGER', Integer, 'Specifies required field index for document id.') { |v| $options[:id_field] = v }
+  p.on('-l', '--l-field INTEGER', Integer, 'Specifies required field index for label(s).') { |v| $options[:l_field] = v }
+  p.on('-f', '--fields i,j,k', Array, 'Specifies required field indices for feature(s).') { |v| $options[:fields] = v }
+  p.on('-r', '--stop-phrases PATH', String, 'Specifies optional file paths for stop-phrases.') { |v| $options[:stop_phrases] = v }
+  p.on('-o', '--overwrite', 'Whether to overwrite existing corpus and corpus-priors.') { |v| $options[:overwrite] = v }
+  p.on('-x', '--excludes x,y,z', Array, 'Specifies labels to exclude.') { |v| $options[:excludes] = v }
+end.parse!
+
+overwrite = $options[:overwrite]
+skip_count = $options[:skip_count] || 1
+max_entries = $options[:max_entries]
+out_dir = $options[:out_dir] || '/tmp'
+id_field = $options[:id_field] || 0
+l_field = $options[:l_field]
+fields = ($options[:fields] || ['4', '5']).map { |e| e.to_i }
+stop_phrases = $options[:stop_phrases] || File.expand_path('../stop-comm-text', File.realpath(__FILE__))
+excludes = $options[:excludes] || []
+
+fail "'corpus' must be specified." unless (corpus = ARGV[0])
+require_relative 'vectors' if l_field
+
+stop_phrases = File.exists?(stop_phrases) ? open(stop_phrases).readlines.reduce([]) { |a, l| l.start_with?('#') ? a : a << l.chomp } : nil
+stop_phrases = /#{stop_phrases.join('|')}/ if stop_phrases
+
+%w{corpus doc-topic-priors labels.json}.each { |e| FileUtils.rm_rf File.join(out_dir, e) } if overwrite
+FileUtils.mkdir_p File.join(out_dir, 'corpus')
+ 
+lines_by_id = {}
+open(corpus, 'r:windows-1250') do |io|
+  CSV.new(io).each do |l|
+    next if (skip_count -= 1) >= 0
+    next if l_field && l[l_field].nil?
+    next if l_field && excludes.any? { |e| l[l_field].include?(e) }
+    break if max_entries && (max_entries -= 1) < 0
+    lines_by_id[l[id_field].strip] = l
+  end
+end
+
+label_ids = {}
+labels = []
+puts 'Writing documents: '
+lines_by_id.sort.each do |id, l|
+  path = File.join(out_dir, "corpus", id + ".txt")
+  open(path, 'w:UTF-8') do |w| 
+    begin
+      fields.map { |f| l[f] }.compact.each { |f| w.puts stop_phrases ? f.gsub(stop_phrases, '.') : f }
+    rescue
+      raise 'Failed to process a line: %s.' % [l]
+    end
+    print id, ' '
+  end
+  labels << l[l_field].split('|').map { |e| e.strip }.map { |e| label_ids[e] ||= label_ids.size } if l_field
+end
+puts
+
+if l_field
+  open(File.join(out_dir, 'labels.json'), 'w') do |w|
+    w.puts JSON[label_ids.reduce([]) { |a, (k, v)| a[v] = k; a }]
+  end
+  rows, columns = labels.size, label_ids.size
+  doc_topic_priors = org.apache.mahout.math.SparseRowMatrix.new(rows, columns, true) # true for random access
+  labels.each_with_index { |e, i| e.each { |l| doc_topic_priors.view_row(i).set_quick(l, 1.0/e.size) } }
+  path = File.absolute_path(File.join(out_dir, 'doc-topic-priors'))
+  conf = org.apache.hadoop.conf.Configuration.new.tap { |e| e.set('fs.default.name', 'file:///') }
+  Vectors.write(doc_topic_priors, path, conf)
+  puts 'INFO: done writing to %s (%d rows x %d columns)' % [path, rows, columns]
+end
+exit 0

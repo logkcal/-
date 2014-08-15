@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+%w{optparse open-uri csv json}.each { |e| require e }
+
+$options = {}
+OptionParser.new do |p|
+  p.on('-s', '--skip-lines INTEGER', Integer, 'Skips processing as many lines as specified (default: 1).') { |v| $options[:skip_count] = v }
+  p.on('-n', '--max-lines INTEGER',  Integer, 'Processes as many lines as specified.') { |v| $options[:max_lines] = v }
+  p.on('-t', '--threshold FLOAT',    Float,   'Sepcifies a threshold in MB for outliers (default: 1.5).') { |v| $options[:threshold] = v }
+end.parse!
+
+skip_count = $options[:skip_count] || 1
+max_lines = $options[:max_lines] # || 200 # uncomment if 200 default is desirable.
+threshold = ($options[:threshold] || 1.5) * (1024 * 1024)
+
+ARGV.each do |arg|
+  uploads = {}
+  CSV.open(arg, 'r:windows-1250').each do |row|
+    next if (skip_count -= 1) >= 0
+    break unless max_lines.nil? || (max_lines -= 1) >= 0
+    # row[3] = row[3].split('.')[0..-2].join('.')
+    (uploads[row[3]] ||= []) << row[5].to_i
+  end
+  jj uploads
+  
+  mileages = uploads.reduce({}) do |h, (k, v)|
+    h[k] = [daily = v.reduce(:+), v.size > 6 ? 30 * daily : daily]
+    h 
+  end
+  jj mileages
+
+  outliers = mileages.reject { |k, v| v[1] < threshold }
+  jj outliers
+end
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+%w{rake optparse open-uri json}.each { |e| require e }
+
+$options = {}
+OptionParser.new do |p|
+  p.on('-n', '--n-pieces INTEGER', Integer, 'Splits to n pieces.') { |v| $options[:n] = v }
+end.parse!
+n = $options[:n] || 1
+
+def x!(*cmd, &blk) block_given? ? (sh cmd.join(' ') do |*a| blk.call(a) end) : (sh cmd.join(' ')) end
+
+ARGV.each do |e|
+  x! %Q(hadoop dfs -rmr #{e}/_logs #{e}/_SUCCESS) do end
+  x! %Q(mahout resplit -i #{e} -o #{e} -ns #{n}) do end
+  x! %Q(hadoop dfs -rmr #{e}) do end
+end
