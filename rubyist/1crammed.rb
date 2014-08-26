@@ -670,7 +670,7 @@ class Graph
       cross = lambda do |e, x|
         if not entered[e.y]
           tree_edges[e.y] = x 
-        elsif (!directed && tree_edges[x] != e.y) || (directed && !exited[x])
+        elsif (!directed && tree_edges[x] != e.y) || (directed && !exited[e.y])
           (back_edges[e.y] ||= []) << x # x = 1, e.y = 0
         end
       end
