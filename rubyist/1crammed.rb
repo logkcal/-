@@ -1911,18 +1911,18 @@ anagrams = anagrams.stream().sorted().collect(Collectors.toList());
       end
     end
 
-    find_occurences = lambda do |ary, key|
+    find_occurrences = lambda do |ary, key|
       min_index = first_index.call(ary, key, 0...ary.size)
       min_index..last_index.call(ary, key, min_index...ary.size) if min_index
     end
 
     assert_equal 3, first_index.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 5, 0...9)
     assert_equal 5, last_index.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 5, 0...9)
-    assert_equal 1..2, find_occurences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 3)
-    assert_equal 6..7, find_occurences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 7)
-    assert_equal 0..0, find_occurences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 1)
-    assert_equal nil, find_occurences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 0)
-    assert_equal nil, find_occurences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 10)
+    assert_equal 1..2, find_occurrences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 3)
+    assert_equal 6..7, find_occurrences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 7)
+    assert_equal 0..0, find_occurrences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 1)
+    assert_equal nil, find_occurrences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 0)
+    assert_equal nil, find_occurrences.call([1, 3, 3, 5, 5, 5, 7, 7, 9], 10)
   end
 
   def test_11_5_find_out_of_sorted_strings_in_empty_strings
