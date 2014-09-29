@@ -103,16 +103,9 @@
 
 ##### questions
 
-* design put and get methods on a fixed size cache w/ LRU eviction strategy.
-* debug a crashing process, or a crash dump: unchecked exceptions such as divide-by-zero, out-of-memory, out-of-system resources, and array out-of- index range, heap/stack overflow, and unallocated/uninitialized/corrupted memory.
-* design database tables for a car rental app.
 * design a class library for a generic card game.
 * design a data structure for managing memory (stack).
-* design a system that produces top 1M google search terms.
 * organize a closet full of t-shirts for easier retrievals.
-* design a function that sees if one won a Tic Tac Toe game.
-* store a binary search tree into an array efficiently.
-* find the k-th largest element from a binary search tree w/o extra space use.
 
 ```ruby
 def self.last(node, k, a = [0]) # solves the k-th largest element.
