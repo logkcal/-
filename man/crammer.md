@@ -62,11 +62,8 @@
   * [a list of appointments to set conflicts flag](http://www.glassdoor.com/Interview/If-you-had-a-list-of-appointments-each-appointment-has-a-begin-time-an-end-time-and-a-boolean-hasConflict-how-would-yo-QTN_120704.htm)
   * Implement a program to play the battleship game.
   * [Given a grid that contains rectangles, write a function that will return all the rectangles that overlap with each other.](http://www.glassdoor.com/Interview/Given-a-grid-that-contains-rectangles-write-a-function-that-will-return-all-the-rectangles-that-overlap-with-each-other-QTN_99113.htm)
-  * [Find shortest substring in a string that contains all of a set of characters.](http://www.glassdoor.com/Interview/Find-shortest-substring-in-a-string-that-contains-all-of-a-set-of-characters-QTN_66124.htm)
   * [Given a time-ordered log of user visits to web pages find the most common 3-page sequence](http://www.glassdoor.com/Interview/Given-a-time-ordered-log-of-user-visits-to-web-pages-find-the-most-common-3-page-sequence-QTN_32750.htm)
-  * [a card game of 24](http://www.glassdoor.com/Interview/I-am-playing-a-card-game-called-24-Cards-ace-to-king-are-numbered-1-to-13-During-a-given-round-I-am-provided-four-cards-QTN_28514.htm)
   * [A quad tree is used to represent a black/white image. If you are provided with two such image representations, write a function to create a third tree that represents the merged image. (Black overrides white, mixed; mixed overrides white)](http://www.glassdoor.com/Interview/A-quad-tree-is-used-to-represent-a-black-white-image-If-you-are-provided-with-two-such-image-representations-write-a-func-QTN_28515.htm)
-  * [most recently open files](http://www.glassdoor.com/Interview/-Describe-the-design-of-a-most-recently-used-list-such-as-the-Recent-Files-menu-in-Microsoft-Word-It-has-two-public-me-QTN_23133.htm)
 
 #### Concurrent Puzzle Solver
 
