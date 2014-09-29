@@ -66,7 +66,6 @@
 * glassdoor.com http://www.glassdoor.com/Interview/Google-Interview-Questions-E9079.htm
   * [given ranges 1-4, 6-7, and 10-12, and another 9-11 to add, return 1-4, 6-7, 9-12.](http://www.glassdoor.com/Interview/Add-a-new-range-with-a-given-list-of-ranges-by-combining-the-new-range-instead-of-overlapping-For-example-1-4-6-7-10-QTN_319267.htm)
   * how to optimize/parallel a cache for an mobile app
-  * priority inversion, and how to solve it?
   * develop an iterator (has_next, and next).
   * discuss data structures for reading URL->File content (crawler data e.g.) and remove duplicates.
   * Card game, given 4 cards. If by +,-,/,* and () you can make 24, you win. Write a program to play this game.
