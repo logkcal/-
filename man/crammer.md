@@ -78,17 +78,6 @@
   * [A quad tree is used to represent a black/white image. If you are provided with two such image representations, write a function to create a third tree that represents the merged image. (Black overrides white, mixed; mixed overrides white)](http://www.glassdoor.com/Interview/A-quad-tree-is-used-to-represent-a-black-white-image-If-you-are-provided-with-two-such-image-representations-write-a-func-QTN_28515.htm)
   * [most recently open files](http://www.glassdoor.com/Interview/-Describe-the-design-of-a-most-recently-used-list-such-as-the-Recent-Files-menu-in-Microsoft-Word-It-has-two-public-me-QTN_23133.htm)
 
-##### questions
-
-* organize a closet full of t-shirts for easier retrievals.
-* design a search engine. how to index keywords out of documents?
-* design a 2D dungeon crawling game; a maze full of walls, objects, and characters.
-* design a Frogger game; we should direct a frog to avoid cars while crossing a busy road.
-* find integers that appear at least twice given a file of 4B 32-bit integers.
-* construct Google maps from scratch, and guide a person stadning at Mumbai to Delhi.
-
-***
-
 #### Concurrent Puzzle Solver
 
 * We define a puzzle where there are an initial state, a goal state, and a set of rules that determine valid moves. The concurrent approach uses the work queue of the executor instead of a call stack to hold the search state. Sequential approach performs DFS, that is bounded by the thread stack size, whereas concurrent approach performs BFS, that is still bounded by the set of states to be searched, or already searched.
