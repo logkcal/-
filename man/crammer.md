@@ -106,28 +106,6 @@
 * design a class library for a generic card game.
 * design a data structure for managing memory (stack).
 * organize a closet full of t-shirts for easier retrievals.
-
-```ruby
-def self.last(node, k, a = [0]) # solves the k-th largest element.
-  if node
-    (a[0] < k ? last(node.right, k, a) : []) +
-    (a[0] < k ? [node.value] : []) +
-    ((a[0] += 1) < k ? last(node.left, k, a) : [])
-  else
-    []
-  end
-end
-```
-* find the minimum # of coins to give a certain amount of change.
-
-```ruby
-def self.make_change(k, denominations, memos = {0 => []})
-  denominations.select {|d| d <= k}.map {|d|
-    [d] + (memos[k-d] ||= make_change(k-d, denominations, memos))
-  }.min_by { |coins| coins.size }
-end
-```
-* design an index structure for anagrams of words? e.g. 'pot' is returned when 'top' is queried.
 * design a search engine. how to index keywords out of documents?
 * design spelling and word suggestions for smartphone keyboards.
 * find the max rectangle in terms of area from a histogram in linear time, O(n).
