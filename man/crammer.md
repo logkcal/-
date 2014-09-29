@@ -65,15 +65,10 @@
 
 * glassdoor.com http://www.glassdoor.com/Interview/Google-Interview-Questions-E9079.htm
   * [given ranges 1-4, 6-7, and 10-12, and another 9-11 to add, return 1-4, 6-7, 9-12.](http://www.glassdoor.com/Interview/Add-a-new-range-with-a-given-list-of-ranges-by-combining-the-new-range-instead-of-overlapping-For-example-1-4-6-7-10-QTN_319267.htm)
-  * two numbers sum up to some designated number.
-  * find the minimum window in a string which contains a list of characters.
   * how to optimize/parallel a cache for an mobile app
-  * given a graph, find if it represents a tree.
   * priority inversion, and how to solve it?
   * develop an iterator (has_next, and next).
-  * find the longest word in a dictionary, such that the word can be built one character at a time, and all substrings are words in the dictionary. A new character can be added anywhere.
   * discuss data structures for reading URL->File content (crawler data e.g.) and remove duplicates.
-  * find a number in a sorted array with duplicates in O(log n) time.
   * Card game, given 4 cards. If by +,-,/,* and () you can make 24, you win. Write a program to play this game.
   * [a list of appointments to set conflicts flag](http://www.glassdoor.com/Interview/If-you-had-a-list-of-appointments-each-appointment-has-a-begin-time-an-end-time-and-a-boolean-hasConflict-how-would-yo-QTN_120704.htm)
   * Implement a program to play the battleship game.
