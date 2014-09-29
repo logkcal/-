@@ -44,16 +44,10 @@
 * http://www.aminariana.com/resources/software-technical-interview-questions
 * http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7?op=1
 * http://www.dailyjobquestions.com/2011/10/02/dynamic-programming-algorithms-list/
-* http://www.dailyjobquestions.com/google-questions.html
-* http://www.geeksforgeeks.org/archives/tag/dynamic-programming
 * http://www.glassdoor.com/Interview/dynamic-programming-interview-questions-SRCH_KT0,19.htm
 * http://www.leetcode.com/2010/04/hacking-google-interview-from-mit.html
 * http://www.youtube.com/playlist?list=PLD629C50E1A85BF84
-* 
-* [facebook programming challenges](https://facebook.interviewstreet.com/recruit/challenges)
 * [get-that-job-at-google](http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html)
-* [140 google interview questions](http://www.impactinterview.com/2009/10/140-google-interview-questions/#software_engineer)
-* [15 banned interview questions](http://www.businessinsider.com/15-banned-google-interview-questions-that-will-make-you-feel-stupid-2011-11)
 * [8 mind-bending interview questions](http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7)
 * [smart enough to work at google?](http://www.wired.co.uk/magazine/archive/2012/05/start/want-to-work-at-google?page=all)
 
