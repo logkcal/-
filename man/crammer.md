@@ -82,7 +82,6 @@
 
 * organize a closet full of t-shirts for easier retrievals.
 * design a search engine. how to index keywords out of documents?
-* find the max rectangle in terms of area from a histogram in linear time, O(n).
 * design a 2D dungeon crawling game; a maze full of walls, objects, and characters.
 * design a Frogger game; we should direct a frog to avoid cars while crossing a busy road.
 * find integers that appear at least twice given a file of 4B 32-bit integers.
