@@ -68,10 +68,6 @@
   * two numbers sum up to some designated number.
   * find the minimum window in a string which contains a list of characters.
   * how to optimize/parallel a cache for an mobile app
-  * how to design a excel
-  * how to implement search in G+
-  * check if a string matches a regular expression
-  * given a graph node, return a copy of the sub-graph starting with that node. what about cycles?
   * given a graph, find if it represents a tree.
   * priority inversion, and how to solve it?
   * develop an iterator (has_next, and next).
