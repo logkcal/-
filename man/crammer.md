@@ -1,4 +1,4 @@
-#### Programming Interviews
+#### Programming Interviews http://www.youtube.com/playlist?list=PLD629C50E1A85BF84
 
 * backtracking:
   [vertice coloring](http://www.youtube.com/watch?v=Cl3A_9hokjU),
@@ -46,7 +46,6 @@
 * http://www.dailyjobquestions.com/2011/10/02/dynamic-programming-algorithms-list/
 * http://www.glassdoor.com/Interview/dynamic-programming-interview-questions-SRCH_KT0,19.htm
 * http://www.leetcode.com/2010/04/hacking-google-interview-from-mit.html
-* http://www.youtube.com/playlist?list=PLD629C50E1A85BF84
 * [get-that-job-at-google](http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html)
 * [8 mind-bending interview questions](http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7)
 * [smart enough to work at google?](http://www.wired.co.uk/magazine/archive/2012/05/start/want-to-work-at-google?page=all)
@@ -57,9 +56,6 @@
   * [given ranges 1-4, 6-7, and 10-12, and another 9-11 to add, return 1-4, 6-7, 9-12.](http://www.glassdoor.com/Interview/Add-a-new-range-with-a-given-list-of-ranges-by-combining-the-new-range-instead-of-overlapping-For-example-1-4-6-7-10-QTN_319267.htm)
   * how to optimize/parallel a cache for an mobile app
   * develop an iterator (has_next, and next).
-  * discuss data structures for reading URL->File content (crawler data e.g.) and remove duplicates.
-  * Card game, given 4 cards. If by +,-,/,* and () you can make 24, you win. Write a program to play this game.
   * [a list of appointments to set conflicts flag](http://www.glassdoor.com/Interview/If-you-had-a-list-of-appointments-each-appointment-has-a-begin-time-an-end-time-and-a-boolean-hasConflict-how-would-yo-QTN_120704.htm)
-  * Implement a program to play the battleship game.
   * [Given a grid that contains rectangles, write a function that will return all the rectangles that overlap with each other.](http://www.glassdoor.com/Interview/Given-a-grid-that-contains-rectangles-write-a-function-that-will-return-all-the-rectangles-that-overlap-with-each-other-QTN_99113.htm)
   * [Given a time-ordered log of user visits to web pages find the most common 3-page sequence](http://www.glassdoor.com/Interview/Given-a-time-ordered-log-of-user-visits-to-web-pages-find-the-most-common-3-page-sequence-QTN_32750.htm)
