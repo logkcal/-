@@ -103,11 +103,8 @@
 
 ##### questions
 
-* design a class library for a generic card game.
-* design a data structure for managing memory (stack).
 * organize a closet full of t-shirts for easier retrievals.
 * design a search engine. how to index keywords out of documents?
-* design spelling and word suggestions for smartphone keyboards.
 * find the max rectangle in terms of area from a histogram in linear time, O(n).
 * design a 2D dungeon crawling game; a maze full of walls, objects, and characters.
 * design a Frogger game; we should direct a frog to avoid cars while crossing a busy road.
