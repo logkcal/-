@@ -101,27 +101,6 @@
 * ask clarifying questions and verify if it's on the track.
 * be cautious of a delay-of-game penalty if taken too long.
 
-##### technical prep
-
-* absolutely know how hashtable, hashmap, and treemap work.
-* a binary search tree, B-tree, B+ tree, trie/suffix tree, red/black, splay, and AVL tree.
-* in a B+ tree, in contrast to a B-tree, all records are stored at the leaf level of the tree; only keys are stored in interior nodes.
-  * the primary value of a B+ tree is in storing data for efficient retrieval in a block-oriented storage context; this is primarily because unlike binary search trees, B+ trees have very high fanout (typically on the order of 100 or more), which reduces the number of I/O operations required to find an element in the tree.
-* [graph](http://en.wikipedia.org/wiki/Graph_traversal) & [tree traversals](http://en.wikipedia.org/wiki/Tree_traversal): DFS, BFS, inorder, preorder, and postorder.
-* graph algos: [Dijkstra](http://en.wikipedia.org/wiki/Dijkstra's_algorithm), [A*](http://en.wikipedia.org/wiki/A*_search_algorithm), ...
-  * A* uses a distance-plus-cost heuristic function to determine the order where we visit nodes in a combinatorial space search.
-  * The distance-plus-cost heuristic is a sum of two functions: the path-cost function, and an admissible "heuristic estimate" of the distance to the goal.
-* [NP-complete](http://en.wikipedia.org/wiki/NP-complete): TSP, hamiltonian path, knapsack, vertex cover, graph coloring, ...
-* discrete math: 
-  * a _k_-combination of a set S is a subset of _k_ distinct elements of S, and the # of k-combinations is equals to the binomial coefficient, <b>n! / (k! * (n-k)!)</b>.
-  * a _k_-permutation of a set S is an ordered sequence of k distinct elements of S, and the # of _k_-permutation of n objects is denoted variously <sub>n</sub>P<sub>k</sub>, P<sub>n,k</sub>, and P(n,k), and its value is given by <b>n! / (n-k)!</b>.
-  * [how many ways are there to merge N companies](http://placementsindia.blogspot.jp/2007/12/solutions-to-few-google-top-interview.html)? `C(n,2)*C(n-1,2)*...*C(2,2) = n!*(n-1)!/(2**(n-1))`
-* OS: processes & threads, locks, ciritical sections, and monitors
-  * a deadlock is a situation wherein two or more competing actions are waiting for the other to finish, so neither ever does.
-  * a livelock occurs when 2+ processes continually change their state in response to changes in the other processes, so neither ever finishes.
-  * the necessary deadlock conditions: mutual exclusion, hold and wait, no preemption, whereas the sufficient deadlock condition: circular wait.
-  * a semaphore allows synchronized access to an arbitrary number of shared resource, whilst a mutex allows synchronized access to a shared resource. a mutex has two states: locked/unlocked, unavailable/available. a semaphore has a counter.
-
 ##### questions
 
 * design put and get methods on a fixed size cache w/ LRU eviction strategy.
