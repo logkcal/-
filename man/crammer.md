@@ -83,19 +83,6 @@
   * [a card game of 24](http://www.glassdoor.com/Interview/I-am-playing-a-card-game-called-24-Cards-ace-to-king-are-numbered-1-to-13-During-a-given-round-I-am-provided-four-cards-QTN_28514.htm)
   * [A quad tree is used to represent a black/white image. If you are provided with two such image representations, write a function to create a third tree that represents the merged image. (Black overrides white, mixed; mixed overrides white)](http://www.glassdoor.com/Interview/A-quad-tree-is-used-to-represent-a-black-white-image-If-you-are-provided-with-two-such-image-representations-write-a-func-QTN_28515.htm)
   * [most recently open files](http://www.glassdoor.com/Interview/-Describe-the-design-of-a-most-recently-used-list-such-as-the-Recent-Files-menu-in-Microsoft-Word-It-has-two-public-me-QTN_23133.htm)
-  *
-  *
-
-##### non-technical prep
-
-* go in humble, open-minded, and focused on interview survival.
-* never tell interviewers how to interview - most arrogant.
-* feel free to ask for help or hints when stuck on hurdles.
-* do not change the subject or answer a different question.
-* ask if they want us to write some code on the whiteboard.
-* ask if they really care about syntax and want clean code.
-* ask clarifying questions and verify if it's on the track.
-* be cautious of a delay-of-game penalty if taken too long.
 
 ##### questions
 
