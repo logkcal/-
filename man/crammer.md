@@ -118,32 +118,6 @@ Database
 Distributed computing
 - map-reduce, service oriented architecture, distributed caching, and load balancing
 
-```javascript
-function m() {
-   for (var i = 0; i < this.reviews.lenghts; i++) {
-      emit (this.reviews[i].who, { count: 1, length: this.reviews[i].text.length });
-   }
-}
-
-function r(who, values) {
-   var res = { count: 0, length: 0 }
-   for (var i = 0; i < values.length; i++) {
-      res.count += vales[i].count;
-      res.length = += values[i].length;
-   }
-
-   return res;
-}
-
-function f(who, value) {
-   value.average = value.length / value.count;
-   return value;
-}
-
-reduced = db.reviews.mapReduce(m, r, f);
-db[reduced.results].find();
-```
-
 Lock-ordering deadlocks can be eliminated by fixed global order, or identity hash code, not calling alien methods, and strive to open calls. Detection and avoidance?
 
 http://en.wikipedia.org/wiki/Dependency_injection
