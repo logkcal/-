@@ -90,19 +90,3 @@ public List<M> ConcurrentPuzzleSolver#solve() throws InterruptedException {
     }
 }
 ```
-
-#### Crammer
-
-OO design
-- singleton, factory, adapter, bridge, visiter, command, proxy, observer
-
-Database
-- how relational db works, design schemas, and write basic queries
-
-Distributed computing
-- map-reduce, service oriented architecture, distributed caching, and load balancing
-
-Lock-ordering deadlocks can be eliminated by fixed global order, or identity hash code, not calling alien methods, and strive to open calls. Detection and avoidance?
-
-http://en.wikipedia.org/wiki/Dependency_injection
-highly coupled dependency -> setter injection, interface injection, and constructor injection.
