@@ -91,11 +91,6 @@
 
 ***
 
-#### Links
-* FB http://blogs.sun.com/augustus/entry/facebull_problem_definition
-* http://www.polygenelubricants.com/2010/01/facebook-puzzles.html
-* http://20bits.com/articles/facebook-job-puzzles-prime-bits/
-
 #### Concurrent Puzzle Solver
 
 * We define a puzzle where there are an initial state, a goal state, and a set of rules that determine valid moves. The concurrent approach uses the work queue of the executor instead of a call stack to hold the search state. Sequential approach performs DFS, that is bounded by the thread stack size, whereas concurrent approach performs BFS, that is still bounded by the set of states to be searched, or already searched.
