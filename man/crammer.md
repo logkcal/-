@@ -37,10 +37,6 @@
   [insert to bst](http://www.youtube.com/watch?v=49r2Lc07UV4)
 * [primality](http://www.youtube.com/watch?v=wfo1cdvP9Cg)
 
-#### todo
-
-* a card game, a string containing chars found in both of two strings, memory pool using stack, 
-
 #### prep
 
 * http://basicalgos.blogspot.com/search/label/dynamic%20programming
