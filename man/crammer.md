@@ -45,8 +45,6 @@
 * http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7?op=1
 * http://www.dailyjobquestions.com/2011/10/02/dynamic-programming-algorithms-list/
 * http://www.glassdoor.com/Interview/dynamic-programming-interview-questions-SRCH_KT0,19.htm
-* http://www.leetcode.com/2010/04/hacking-google-interview-from-mit.html
-* [get-that-job-at-google](http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html)
 * [8 mind-bending interview questions](http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7)
 * [smart enough to work at google?](http://www.wired.co.uk/magazine/archive/2012/05/start/want-to-work-at-google?page=all)
 
