@@ -64,20 +64,3 @@
   * [Given a grid that contains rectangles, write a function that will return all the rectangles that overlap with each other.](http://www.glassdoor.com/Interview/Given-a-grid-that-contains-rectangles-write-a-function-that-will-return-all-the-rectangles-that-overlap-with-each-other-QTN_99113.htm)
   * [Given a time-ordered log of user visits to web pages find the most common 3-page sequence](http://www.glassdoor.com/Interview/Given-a-time-ordered-log-of-user-visits-to-web-pages-find-the-most-common-3-page-sequence-QTN_32750.htm)
   * [A quad tree is used to represent a black/white image. If you are provided with two such image representations, write a function to create a third tree that represents the merged image. (Black overrides white, mixed; mixed overrides white)](http://www.glassdoor.com/Interview/A-quad-tree-is-used-to-represent-a-black-white-image-If-you-are-provided-with-two-such-image-representations-write-a-func-QTN_28515.htm)
-
-#### Concurrent Puzzle Solver
-
-* We define a puzzle where there are an initial state, a goal state, and a set of rules that determine valid moves. The concurrent approach uses the work queue of the executor instead of a call stack to hold the search state. Sequential approach performs DFS, that is bounded by the thread stack size, whereas concurrent approach performs BFS, that is still bounded by the set of states to be searched, or already searched.
-
-```java
-public List<M> ConcurrentPuzzleSolver#solve() throws InterruptedException {
-    try {
-        P initial = puzzle.initialState();
-        exec.execute(newTask(initial, null, null));
-        Node<P, M> solution = solutionLatch.getValue();
-        return null == solution ? null : solution.asMoves();
-    } finally {
-        exec.shutdown();
-    }
-}
-```
