@@ -37,11 +37,6 @@
   [insert to bst](http://www.youtube.com/watch?v=49r2Lc07UV4)
 * [primality](http://www.youtube.com/watch?v=wfo1cdvP9Cg)
 
-#### prep
-
-* http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7?op=1
-* http://www.dailyjobquestions.com/2011/10/02/dynamic-programming-algorithms-list/
-
 #### recent google questions
 
 * glassdoor.com http://www.glassdoor.com/Interview/Google-Interview-Questions-E9079.htm
