@@ -39,7 +39,6 @@
 
 #### prep
 
-* http://codercareer.blogspot.com/
 * http://www.aminariana.com/resources/software-technical-interview-questions
 * http://www.businessinsider.com/8-mind-bending-interview-questions-that-google-asks-its-engineers-2012-7?op=1
 * http://www.dailyjobquestions.com/2011/10/02/dynamic-programming-algorithms-list/
