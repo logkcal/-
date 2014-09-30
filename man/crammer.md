@@ -39,10 +39,9 @@
 
 #### recent google questions
 
-* glassdoor.com http://www.glassdoor.com/Interview/Google-Interview-Questions-E9079.htm
-  * [given ranges 1-4, 6-7, and 10-12, and another 9-11 to add, return 1-4, 6-7, 9-12.](http://www.glassdoor.com/Interview/Add-a-new-range-with-a-given-list-of-ranges-by-combining-the-new-range-instead-of-overlapping-For-example-1-4-6-7-10-QTN_319267.htm)
-  * how to optimize/parallel a cache for an mobile app
-  * develop an iterator (has_next, and next).
-  * [a list of appointments to set conflicts flag](http://www.glassdoor.com/Interview/If-you-had-a-list-of-appointments-each-appointment-has-a-begin-time-an-end-time-and-a-boolean-hasConflict-how-would-yo-QTN_120704.htm)
-  * [Given a grid that contains rectangles, write a function that will return all the rectangles that overlap with each other.](http://www.glassdoor.com/Interview/Given-a-grid-that-contains-rectangles-write-a-function-that-will-return-all-the-rectangles-that-overlap-with-each-other-QTN_99113.htm)
-  * [Given a time-ordered log of user visits to web pages find the most common 3-page sequence](http://www.glassdoor.com/Interview/Given-a-time-ordered-log-of-user-visits-to-web-pages-find-the-most-common-3-page-sequence-QTN_32750.htm)
+* [given ranges 1-4, 6-7, and 10-12, and another 9-11 to add, return 1-4, 6-7, 9-12.](http://www.glassdoor.com/Interview/Add-a-new-range-with-a-given-list-of-ranges-by-combining-the-new-range-instead-of-overlapping-For-example-1-4-6-7-10-QTN_319267.htm)
+* how to optimize/parallel a cache for an mobile app
+* develop an iterator (has_next, and next).
+* [a list of appointments to set conflicts flag](http://www.glassdoor.com/Interview/If-you-had-a-list-of-appointments-each-appointment-has-a-begin-time-an-end-time-and-a-boolean-hasConflict-how-would-yo-QTN_120704.htm)
+* [Given a grid that contains rectangles, write a function that will return all the rectangles that overlap with each other.](http://www.glassdoor.com/Interview/Given-a-grid-that-contains-rectangles-write-a-function-that-will-return-all-the-rectangles-that-overlap-with-each-other-QTN_99113.htm)
+* [Given a time-ordered log of user visits to web pages find the most common 3-page sequence](http://www.glassdoor.com/Interview/Given-a-time-ordered-log-of-user-visits-to-web-pages-find-the-most-common-3-page-sequence-QTN_32750.htm)
