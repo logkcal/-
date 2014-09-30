@@ -136,8 +136,8 @@ end
 * we find strongly-connected components by **reducing vertices on a directed cycle** down to a single vertex representing a component until there is no cycle.
 * two-DFS idea for finding strongly-connected components is to do DFS to number vertices in post-vertex processing, and continuouly do DFS on the reversed graph from the highest numbered unvisited vertices.
 * is a graph a tree? how to find a cycle if one exists? deadlocked?
-  * it is a tree if the graph is connected and has n - 1 edges for n vertices.
-  * back edges and DFS trees together define directed cycles; no other such cycle can exist in directed graphs.
+  * undirected: it is a tree if the undirected graph is connected and has n - 1 edges for n vertices.
+  * directed: back edges and DFS trees together define directed cycles; no other such cycle can exist in directed graphs.
 
 ##### Weighted Graphs and [MST](http://www.ics.uci.edu/~eppstein//161/960206.html)
 
