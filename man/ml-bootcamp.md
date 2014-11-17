@@ -61,9 +61,9 @@ curl -o "$HOME/.irbrc" -ksL http://raw.github.com/henry4j/-/master/paste/.irbrc
 ##### Install Mac VIM (optional)
 
 ```bash
-curl -o /tmp/MacVim-snapshot-72.tbz -kL https://github.com/b4winckler/macvim/releases/download/snapshot-72/MacVim-snapshot-72-Mavericks.tbz
-tar xvf /tmp/MacVim-snapshot-72.tbz -C /tmp/
-mv /tmp/MacVim-snapshot-72/MacVim.app /Applications/
+curl -o /tmp/MacVim-snapshot-73.tbz -kL https://github.com/b4winckler/macvim/releases/download/snapshot-73/MacVim-snapshot-73-Mavericks.tbz
+tar xvf /tmp/MacVim-snapshot-73.tbz -C /tmp/
+mv /tmp/MacVim-snapshot-73/MacVim.app /Applications/
 curl -o "$HOME/.vim/colors/molokai.vim" -ksL http://www.vim.org/scripts/download_script.php?src_id=9750 --create-dirs
 
 cat <<EOF >> "$HOME/.profile"
