@@ -1,8 +1,8 @@
 # color prompts, e.g. 32;40, or 30;46
-if [ '3c075447ffae' = `hostname | cut -d. -f1` ]; then
-  export PS1='\[\e]2;\u@\h:\@:\w\a\e]1;$(basename $(dirname $(pwd)))/\W\a\e[32;40m\]\t:$(basename $(dirname $(pwd)))/\W>\[\e[0m\] '
-else
+if [ 'henrylee-macbookpro' = `hostname | cut -d. -f1` ]; then
   export PS1='\[\e]2;\u@\h:\@:\w\a\e]1;$(basename $(dirname $(pwd)))/\W\a\e[30;46m\]\t:$(pwd)>\[\e[0m\] '
+else
+  export PS1='\[\e]2;\u@\h:\@:\w\a\e]1;$(basename $(dirname $(pwd)))/\W\a\e[32;40m\]\t:$(basename $(dirname $(pwd)))/\W>\[\e[0m\] '
 fi
 export TERM='xterm-color'
 export CLICOLOR=1
